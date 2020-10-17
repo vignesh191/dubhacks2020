@@ -1,15 +1,26 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import TopBar from './components/navbar/TopBar.js'
-import 'bootstrap/dist/css/bootstrap.min.css';
+//routing
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
+
+//pages
+import Home from './pages/Home.js'
+
 
 function App() {
   return (
-    <div className="App">
-      <TopBar icon={'Ally'} />
 
-    </div>
+    <Router>
+        <div className="App">
+          <TopBar icon={'Ally'} />
+
+          <Switch>
+            <Route exact path= "/" component={Home} />
+          </Switch>
+
+        </div>
+    </Router>
   );
 }
 
