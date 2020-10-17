@@ -1,7 +1,6 @@
 import React from 'react';
 import styles from './button.css'
 import {Button} from 'react-bootstrap'
-import 'bootstrap/dist/css/bootstrap.min.css';
 
 function Buttons(props) {
 
