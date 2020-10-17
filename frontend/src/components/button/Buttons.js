@@ -6,12 +6,9 @@ function Buttons(props) {
 
   return (
     <div className="mb-2">
-        <Button variant="primary" size="lg">
+        <Button variant={props.color} size="lg">
             {props.icon}
         </Button>{' '}
-        {/* <Button variant="secondary" size="lg">
-            {props.icon}
-        </Button> */}
     </div>
   );
 }
