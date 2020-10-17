@@ -2,11 +2,14 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Navbar from './components/navbar/Navbar.js'
+import Buttons from './components/button/Buttons.js'
+
 
 function App() {
   return (
     <div className="App">
       <Navbar icon={'Ally'} />
+      <Buttons icon ={'button'} />
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
