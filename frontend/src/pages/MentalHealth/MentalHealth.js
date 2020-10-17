@@ -1,5 +1,5 @@
 import React from 'react';
-import Buttons from '../components/button/Buttons.js'
+import Buttons from '../../components/button/Buttons.js'
 
 function MentalHealth() {
   return (
