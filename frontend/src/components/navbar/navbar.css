@@ -16,3 +16,9 @@
 .p {
     margin-top: 25px;
 }
+
+.warning {
+    font-size: 0.7em !important;
+    max-width: 25%;
+    text-align: center
+}

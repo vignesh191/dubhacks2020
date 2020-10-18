@@ -10,7 +10,8 @@ function Youth() {
   return (
         <Container>
             <Jumbotron>
-                <h1> Youth Emergency Resources: </h1>
+                <h2> Youth Emergency Resources: </h2>
+                <hr/>
             </Jumbotron>
         </Container>
   );

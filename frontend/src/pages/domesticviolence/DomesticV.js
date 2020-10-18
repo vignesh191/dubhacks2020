@@ -16,7 +16,8 @@ function DomesticV() {
   return (
         <Container>
             <Jumbotron>
-                <h1> Domestic Violence </h1>
+                <h2> Domestic Violence Emergency Resources: </h2>
+                <hr/>
                 <p> </p>
             </Jumbotron>
         </Container>
