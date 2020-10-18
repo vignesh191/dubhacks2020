@@ -10,7 +10,8 @@ function SexualA() {
   return (
         <Container>
             <Jumbotron>
-                <h1> Sexual Assualt Emergency Resources: </h1>
+                <h2> Sexual Assualt Emergency Resources: </h2>
+                <hr/>
             </Jumbotron>
         </Container>
   );

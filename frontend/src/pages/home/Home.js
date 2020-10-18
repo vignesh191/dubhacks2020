@@ -2,8 +2,26 @@ import React from 'react';
 import {Container, Jumbotron, Row, Col} from 'react-bootstrap'
 import Blockbutton from '../../components/button/Blockbutton.js'
 import styles from './Home.css'
-
+import axios from 'axios'
+import {  Link } from 'react-router-dom'
 function Home() {
+
+function getData() {
+    fetch('http://localhost:8000/domestic')
+        .then(response => {
+            if (response.ok) {
+                return response.json();
+            }
+        })
+        .then(response => {
+            console.log(response);
+        })
+        .catch((err) => {
+            console.log(err);
+        })
+}
+
+
   return (
         <Container>
             <Jumbotron>
@@ -19,29 +37,29 @@ function Home() {
             <br/>
             <Row md={4} className='button-layout'>
               <Col>
-                <Blockbutton color='outline-danger' icon='Domestic Violence' />
+                <Link to="/domesticviolence" className="btn btn-outline-danger btn-block btn-lg">Domestic Violence</Link>
               </Col>
               <Col>
-                 <Blockbutton color='outline-danger' icon='Homelessness' />
+                <Link to="/homeless" className="btn btn-outline-danger btn-block btn-lg">Homelessness</Link>
               </Col>
               <Col>
-                <Blockbutton color='outline-danger' icon='Mental Length' />
+                <Link to="/mentalhealth" className="btn btn-outline-danger btn-block btn-lg">Mental Health</Link>
               </Col>
               <Col>
-                <Blockbutton color='outline-danger' icon='Sexual Assualt' />
+                <Link to="/sexualassault" className="btn btn-outline-danger btn-block btn-lg">Sexual Assault</Link>
               </Col>
             </Row>
             <br/>
             <br/>
             <Row md={3} className='button-layout'>
               <Col>
-                <Blockbutton color='outline-danger' icon='Substance Abuse' />
+                <Link to="/substanceabuse" className="btn btn-outline-danger btn-block btn-lg">Substance Abuse</Link>
               </Col>
               <Col>
-                 <Blockbutton color='outline-danger' icon='Child Abuse' />
+                <Link to="/youth" className="btn btn-outline-danger btn-block btn-lg">Youth</Link>
               </Col>
               <Col>
-                <Blockbutton color='outline-danger' icon='Other' />
+                <Link to="/other" className="btn btn-outline-danger btn-block btn-lg">Other</Link>
               </Col>
             </Row>
             <br/>

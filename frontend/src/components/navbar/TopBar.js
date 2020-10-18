@@ -12,8 +12,8 @@ function TopBar(props) {
           <Nav className="mr-auto">
             <Nav.Link href="/">Home</Nav.Link>
           </Nav>
-          <Navbar.Text>If you are experiencing life-threatening emergency, please call 911:&nbsp;&nbsp;</Navbar.Text>
-            <Popup/>
+          <Navbar.Text className='warning'>If you are experiencing a life-threatening emergency, please call 911:&nbsp;&nbsp;</Navbar.Text>
+          <Popup/>
         </Navbar>
       </Container>
   );
