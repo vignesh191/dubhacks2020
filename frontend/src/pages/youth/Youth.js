@@ -1,11 +1,11 @@
 import React, {useState, useEffect} from 'react';
 import Blockbutton from '../../components/button/Blockbutton.js'
 import Buttons from '../../components/button/Buttons.js'
-import {Container, Jumbotron, ButtonGroup, ToggleButton, Row, Col} from 'react-bootstrap'
+import {Container, Jumbotron, ButtonGroup, ToggleButton, Row, Col, Button} from 'react-bootstrap'
 import styles from './youth.css'
 import ContactCard from '../../components/contactcard/ContactCard.js'
 import Loader from 'react-loader-spinner';
-
+import {Link} from 'react-router-dom'
 
 function Youth() {
   const [data, setData] = useState([])
@@ -35,7 +35,10 @@ function Youth() {
     return (
         <Container>
             <Jumbotron>
-                <h2> Youth Emergency Resources: </h2>
+                <div className='title'>
+                    <h2> Youth Emergency Resources:</h2>
+                    <Link to="/" className="btn btn-secondary btn-lg ml-auto">Go Back</Link>
+                </div>
                 <hr/>
                 <div
                   style={{
@@ -55,7 +58,11 @@ function Youth() {
     return (
          <Container>
             <Jumbotron>
-                <h2> Youth Emergency Resources: </h2>
+                <div className='title'>
+                    <h2> Youth Emergency Resources:</h2>
+                    <Link to="/" className="btn btn-secondary btn-lg ml-auto">Go Back</Link>
+                </div>
+
                 <hr/>
                 {data.map(item =>
                 <div>

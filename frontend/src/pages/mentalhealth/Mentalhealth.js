@@ -43,7 +43,10 @@ function Mentalhealth() {
     return (
         <Container>
             <Jumbotron>
-                <h2> Youth Emergency Resources: </h2>
+                <div className='title'>
+                     <h2>Select a Mental Health Resource:</h2>
+                    <Link to="/" className="btn btn-secondary btn-lg ml-auto">Go Back</Link>
+                </div>
                 <hr/>
                 <div
                   style={{
@@ -63,7 +66,10 @@ function Mentalhealth() {
   return (
         <Container>
             <Jumbotron>
-            <h2>Select a Mental Health Resource:</h2>
+            <div className='title'>
+                 <h2>Select a Mental Health Resource:</h2>
+                <Link to="/" className="btn btn-secondary btn-lg ml-auto">Go Back</Link>
+            </div>
             <hr/>
             <Row>
               <Col>
@@ -82,9 +88,6 @@ function Mentalhealth() {
                   </ToggleButton>
                 ))}
               </ButtonGroup>
-              </Col>
-              <Col xs lg={2}>
-              <Link to="/" className="btn btn-secondary btn-lg">Go Back</Link>
               </Col>
               </Row>
               <br/>

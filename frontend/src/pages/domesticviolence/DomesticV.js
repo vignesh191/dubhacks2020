@@ -6,7 +6,7 @@ import styles from './domesticv.css'
 import axios from 'axios'
 import ContactCard from '../../components/contactcard/ContactCard.js'
 import Loader from 'react-loader-spinner';
-
+import {Link} from 'react-router-dom'
 
 function DomesticV() {
   const [data, setData] = useState([])
@@ -36,7 +36,10 @@ function DomesticV() {
     return (
         <Container>
             <Jumbotron>
-                <h2> Domestic Violence Emergency Resources: </h2>
+                <div className='title'>
+                    <h2> Domestic Violence Emergency Resources: </h2>
+                    <Link to="/" className="btn btn-secondary btn-lg ml-auto">Go Back</Link>
+                </div>
                 <hr/>
                 <div
                   style={{
@@ -56,7 +59,10 @@ function DomesticV() {
   return (
         <Container>
             <Jumbotron>
-                <h2> Domestic Violence Emergency Resources: </h2>
+                <div className='title'>
+                    <h2> Domestic Violence Emergency Resources: </h2>
+                    <Link to="/" className="btn btn-secondary btn-lg ml-auto">Go Back</Link>
+                </div>
                 <hr/>
                 {data.map(item =>
                 <div>

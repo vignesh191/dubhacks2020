@@ -5,7 +5,7 @@ import {Container, Jumbotron, ButtonGroup, ToggleButton, Row, Col} from 'react-b
 import styles from './sexuala.css'
 import ContactCard from '../../components/contactcard/ContactCard.js'
 import Loader from 'react-loader-spinner';
-
+import {Link} from 'react-router-dom'
 
 function SexualA() {
   const [data, setData] = useState([])
@@ -35,7 +35,10 @@ function SexualA() {
     return (
         <Container>
             <Jumbotron>
-                <h2> Sexual Assualt Emergency Resources: </h2>
+                <div className='title'>
+                    <h2> Sexual Assualt Emergency Resources: </h2>
+                    <Link to="/" className="btn btn-secondary btn-lg ml-auto">Go Back</Link>
+                </div>
                 <hr/>
                 <div
                   style={{

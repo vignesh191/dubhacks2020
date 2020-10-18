@@ -65,7 +65,10 @@ function Homeless() {
     return (
         <Container>
             <Jumbotron>
-                <h2>Select a Homelessness Emergency Resource:</h2>
+                <div className='title'>
+                    <h2>Select a Homelessness Emergency Resource:</h2>
+                    <Link to="/" className="btn btn-secondary btn-lg ml-auto">Go Back</Link>
+                </div>
                 <hr/>
                 <div
                   style={{
@@ -85,7 +88,10 @@ function Homeless() {
   return (
         <Container>
             <Jumbotron>
-            <h2>Select a Homelessness Emergency Resource:</h2>
+            <div className='title'>
+                <h2>Select a Homelessness Emergency Resource:</h2>
+                <Link to="/" className="btn btn-secondary btn-lg ml-auto">Go Back</Link>
+            </div>
             <hr/>
             <Row>
               <Col>
@@ -104,9 +110,6 @@ function Homeless() {
                   </ToggleButton>
                 ))}
               </ButtonGroup>
-              </Col>
-              <Col xs lg={2}>
-              <Link to="/" className="btn btn-secondary btn-lg">Go Back</Link>
               </Col>
               </Row>
               <br/>

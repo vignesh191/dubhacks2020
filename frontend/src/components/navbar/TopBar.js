@@ -10,7 +10,7 @@ function TopBar(props) {
         <Navbar bg="dark" variant="dark">
           <Navbar.Brand href="/">Hotline Operator</Navbar.Brand>
           <Nav className="mr-auto">
-            <Nav.Link href="/">Home</Nav.Link>
+            <Nav.Link href="/">About</Nav.Link>
           </Nav>
           <Navbar.Text className='warning'>If you are experiencing a life-threatening emergency, please call 911:&nbsp;&nbsp;</Navbar.Text>
           <Popup/>

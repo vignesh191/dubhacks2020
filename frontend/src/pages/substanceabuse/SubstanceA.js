@@ -5,6 +5,7 @@ import {Container, Jumbotron, ButtonGroup, ToggleButton, Row, Col} from 'react-b
 import styles from './substancea.css'
 import ContactCard from '../../components/contactcard/ContactCard.js'
 import Loader from 'react-loader-spinner';
+import {Link} from 'react-router-dom'
 
 function SubstanceA() {
   const [data, setData] = useState([])
@@ -35,7 +36,10 @@ function SubstanceA() {
     return (
         <Container>
             <Jumbotron>
-                <h2> Substance Abuse Emergency Resources: </h2>
+                <div className='title'>
+                    <h2> Substance Abuse Emergency Resources: </h2>
+                    <Link to="/" className="btn btn-secondary btn-lg ml-auto">Go Back</Link>
+                </div>
                 <hr/>
                 <div
                   style={{
@@ -55,7 +59,11 @@ function SubstanceA() {
   return (
         <Container>
             <Jumbotron>
-                <h2> Substance Abuse Emergency Resources: </h2>
+                <div className='title'>
+                    <h2> Substance Abuse Emergency Resources: </h2>
+                    <Link to="/" className="btn btn-secondary btn-lg ml-auto">Go Back</Link>
+                </div>
+                <hr/>
                 <hr/>
                 {data.map(item =>
                 <div>
