@@ -1,20 +1,77 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import Blockbutton from '../../components/button/Blockbutton.js'
 import Buttons from '../../components/button/Buttons.js'
 import {Container, Jumbotron, ButtonGroup, ToggleButton, Row, Col} from 'react-bootstrap'
 import styles from './sexuala.css'
+import ContactCard from '../../components/contactcard/ContactCard.js'
+import Loader from 'react-loader-spinner';
 
 
 function SexualA() {
+  const [data, setData] = useState([])
 
+  useEffect(() => {
+    fetch('http://localhost:8000/sexualassault')
+        .then(response => {
+            if (response.ok) {
+                return response.json();
+            }
+        })
+        .then(response => {
+            setData(response);
+        })
+        .catch((err) => {
+            console.log(err);
+        })
+  }, [])
+
+  useEffect(() => {
+    setData(data);
+    console.log(data);
+  }, [data])
+
+
+  if (data.length===0) {
+    return (
+        <Container>
+            <Jumbotron>
+                <h2> Sexual Assualt Emergency Resources: </h2>
+                <hr/>
+                <div
+                  style={{
+                    width: "100%",
+                    height: "100",
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center"
+                  }}
+                >
+                  <Loader type="TailSpin" color="#333A40" height="100" width="100" />
+                </div>
+            </Jumbotron>
+        </Container>
+    )
+  } else {
   return (
         <Container>
             <Jumbotron>
                 <h2> Sexual Assualt Emergency Resources: </h2>
                 <hr/>
+                {data.map(item =>
+                <div>
+                <ContactCard name={item.name}
+                            address={item.address}
+                            open={(typeof item.hours !== "undefined") ?
+                                    (item.hours.open_now ? 'Currently Open' : 'Not Open') :
+                                     'No Data Available'}
+                            website={item.website}
+                            phone={item.phone} />
+                 <br/>
+                 </div>
+                )}
             </Jumbotron>
         </Container>
-  );
+  )}
 }
 
 export default SexualA;

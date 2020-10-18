@@ -5,6 +5,7 @@ import {Container, Jumbotron, ButtonGroup, ToggleButton, Row, Col} from 'react-b
 import styles from './domesticv.css'
 import axios from 'axios'
 import ContactCard from '../../components/contactcard/ContactCard.js'
+import Loader from 'react-loader-spinner';
 
 
 function DomesticV() {
@@ -31,6 +32,27 @@ function DomesticV() {
   }, [data])
 
 
+  if (data.length===0) {
+    return (
+        <Container>
+            <Jumbotron>
+                <h2> Domestic Violence Emergency Resources: </h2>
+                <hr/>
+                <div
+                  style={{
+                    width: "100%",
+                    height: "100",
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center"
+                  }}
+                >
+                  <Loader type="TailSpin" color="#333A40" height="100" width="100" />
+                </div>
+            </Jumbotron>
+        </Container>
+    )
+  } else {
   return (
         <Container>
             <Jumbotron>
@@ -50,7 +72,7 @@ function DomesticV() {
                 )}
             </Jumbotron>
         </Container>
-  );
+  )}
 }
 
 export default DomesticV;

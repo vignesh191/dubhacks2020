@@ -13,7 +13,6 @@ import DomesticV from './pages/domesticviolence/DomesticV.js';
 import SubstanceA from './pages/substanceabuse/SubstanceA.js';
 import Youth from './pages/youth/Youth.js';
 import SexualA from './pages/sexualassualt/SexualA.js';
-import Other from './pages/other/Other.js';
 
 
 
@@ -30,7 +29,6 @@ function App() {
             <Route exact path= "/youth" component={Youth} />
             <Route exact path= "/sexualassault" component={SexualA} />
             <Route exact path= "/mentalhealth" component={Mentalhealth} />
-            <Route exact path= "/other" component={Other} />
           </Switch>
         </div>
     </Router>

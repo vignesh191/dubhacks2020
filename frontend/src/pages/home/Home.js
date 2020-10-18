@@ -19,7 +19,7 @@ function Home() {
             <hr/>
             <br/>
             <br/>
-            <Row md={4} className='button-layout'>
+            <Row md={3} className='button-layout'>
               <Col>
                 <Link to="/domesticviolence" className="btn btn-outline-danger btn-block btn-lg">Domestic Violence</Link>
               </Col>
@@ -28,9 +28,6 @@ function Home() {
               </Col>
               <Col>
                 <Link to="/mentalhealth" className="btn btn-outline-danger btn-block btn-lg">Mental Health</Link>
-              </Col>
-              <Col>
-                <Link to="/sexualassault" className="btn btn-outline-danger btn-block btn-lg">Sexual Assault</Link>
               </Col>
             </Row>
             <br/>
@@ -43,7 +40,7 @@ function Home() {
                 <Link to="/youth" className="btn btn-outline-danger btn-block btn-lg">Youth</Link>
               </Col>
               <Col>
-                <Link to="/other" className="btn btn-outline-danger btn-block btn-lg">Other</Link>
+                <Link to="/sexualassault" className="btn btn-outline-danger btn-block btn-lg">Sexual Assault</Link>
               </Col>
             </Row>
             <br/>

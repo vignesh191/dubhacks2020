@@ -19,7 +19,7 @@ function ContactCard(props) {
           <strong>Open Status:</strong> {props.open}
         </Card.Text>
         <Button onClick={changeURL} variant='outline-primary'>Visit Website</Button>
-        <Button variant="primary"> Call: {props.phone}</Button>
+        <Button  href={"tel:"+props.phone} variant="primary"> Call: {props.phone}</Button>
       </Card.Body>
     </Card>
   );
