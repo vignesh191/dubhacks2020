@@ -8,24 +8,35 @@ const PORT = process.env.PORT || 8000;
 app.listen(PORT);
 
 
-app.get('/domestic', (req, res) => {
-    const results = fetch('https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=domestic%20violence%20service&inputtype=textquery&fields=formatted_address,name,opening_hours&locationbias=ipbias&key=AIzaSyBTy4elZc3vmAeYUOKVKbORdUAzNba3pY4')
-        .then(response => response.json())
-        .then(jsonResponse => {
-            if (jsonResponse.candidates) {
-                console.log(jsonResponse);
-                return jsonResponse.candidates.map(candidate => {
-                    return {
-                        address: candidate.formatted_address,
-                        name: candidate.name,
-                        hours: candidate.opening_hours
-                    }
-                })
+app.get('/domestic', async(req, res) => {
+    const response = await fetch('https://maps.googleapis.com/maps/api/place/textsearch/json?query=domestic+violence&key=AIzaSyBTy4elZc3vmAeYUOKVKbORdUAzNba3pY4')
+    const jsonResponse = await response.json();
+    let results;
+
+    if (jsonResponse.results) {
+        results = jsonResponse.results.map(place => {
+            return {
+                name: place.name,
+                hours: place.opening_hours,
+                address: place.formatted_address
             }
         })
-    res.send(results);
-});
 
+        for (let i = 0; i < jsonResponse.results.length; i++) {
+            const placeId = jsonResponse.results[i].place_id;
+            const detailResponse = await fetch(`https://maps.googleapis.com/maps/api/place/details/json?place_id=${placeId}&fields=formatted_phone_number,website&key=AIzaSyBTy4elZc3vmAeYUOKVKbORdUAzNba3pY4`);
+            const jsonDetailResponse = await detailResponse.json();
+
+            if (jsonDetailResponse.result) {
+                results[i].phone = jsonDetailResponse.result.formatted_phone_number;
+                results[i].website = jsonDetailResponse.result.website;
+            }
+        }
+    
+    }
+
+    res.send(results);
+})
 
 fetch('http://localhost:8000/domestic')
     .then(response => {
