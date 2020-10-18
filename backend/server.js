@@ -11,9 +11,19 @@ app.listen(PORT);
 app.get('/domestic', async(req, res) => {
     const response = await fetch('https://maps.googleapis.com/maps/api/place/textsearch/json?query=domestic+violence&key=AIzaSyBTy4elZc3vmAeYUOKVKbORdUAzNba3pY4')
     const jsonResponse = await response.json();
-    console.log(jsonResponse);
+    let results;
 
-    res.send(jsonResponse);
+    if (jsonResponse.results) {
+        results = jsonResponse.results.map(place => {
+            return {
+                name: place.name,
+                hours: place.opening_hours,
+                address: place.formatted_address
+            }
+        })
+    }
+
+    res.send(results);
 })
 
 fetch('http://localhost:8000/domestic')
