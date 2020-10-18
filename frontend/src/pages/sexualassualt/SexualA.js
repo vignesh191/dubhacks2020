@@ -36,7 +36,7 @@ function SexualA() {
         <Container>
             <Jumbotron>
                 <div className='title'>
-                    <h2> Sexual Assualt Emergency Resources: </h2>
+                    <h2> Sexual Assault Emergency Resources: </h2>
                     <Link to="/" className="btn btn-secondary btn-lg ml-auto">Go Back</Link>
                 </div>
                 <hr/>
@@ -58,7 +58,10 @@ function SexualA() {
   return (
         <Container>
             <Jumbotron>
-                <h2> Sexual Assualt Emergency Resources: </h2>
+                <div className='title'>
+                    <h2> Sexual Assault Emergency Resources: </h2>
+                    <Link to="/" className="btn btn-secondary btn-lg ml-auto">Go Back</Link>
+                </div>
                 <hr/>
                 {data.map(item =>
                 <div>

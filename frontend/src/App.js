@@ -13,14 +13,14 @@ import DomesticV from './pages/domesticviolence/DomesticV.js';
 import SubstanceA from './pages/substanceabuse/SubstanceA.js';
 import Youth from './pages/youth/Youth.js';
 import SexualA from './pages/sexualassualt/SexualA.js';
-
+import About from './pages/about/About.js';
 
 
 function App() {
   return (
     <Router>
         <div className="App">
-          <TopBar icon={'Ally'} />
+          <TopBar />
           <Switch>
             <Route exact path= "/" component={Home} />
             <Route exact path="/homeless" component={Homeless} />
@@ -29,6 +29,7 @@ function App() {
             <Route exact path= "/youth" component={Youth} />
             <Route exact path= "/sexualassault" component={SexualA} />
             <Route exact path= "/mentalhealth" component={Mentalhealth} />
+            <Route exact path= "/about" component={About} />
           </Switch>
         </div>
     </Router>
