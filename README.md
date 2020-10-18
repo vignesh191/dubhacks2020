@@ -1,5 +1,5 @@
 # Emergency Resource Alternatives (ERA)
-
+Learn more: https://devpost.com/software/emergency-resource-alternatives-era
 ## How to run the project
 First, clone the repo to your local machine
 
