@@ -1,9 +1,12 @@
 const express = require('express');
 const fetch = require("node-fetch");
 const app = express();
+const cors = require('cors');
 
 // http://localhost:8000
 const PORT = process.env.PORT || 8000;
+
+app.use(cors());
 
 app.listen(PORT);
 
