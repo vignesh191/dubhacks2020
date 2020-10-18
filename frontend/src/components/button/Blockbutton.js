@@ -6,7 +6,7 @@ function Blockbutton(props) {
 
   return (
     <div className="mb-2">
-        <Button variant={props.color} size="lg" block>
+        <Button variant={props.color} onClick={props.func} size="lg" block>
             {props.icon}
         </Button>{' '}
     </div>

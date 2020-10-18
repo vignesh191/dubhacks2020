@@ -1,12 +1,13 @@
 const express = require('express');
 const fetch = require("node-fetch");
 const app = express();
-
+const cors = require('cors');
 // http://localhost:8000
 const PORT = process.env.PORT || 8000;
 
 app.listen(PORT);
 
+app.use(cors());
 
 app.get('/domestic', async(req, res) => {
     const response = await fetch('https://maps.googleapis.com/maps/api/place/textsearch/json?query=domestic+violence&key=AIzaSyBTy4elZc3vmAeYUOKVKbORdUAzNba3pY4')

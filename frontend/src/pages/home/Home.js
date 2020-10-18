@@ -2,8 +2,26 @@ import React from 'react';
 import {Container, Jumbotron, Row, Col} from 'react-bootstrap'
 import Blockbutton from '../../components/button/Blockbutton.js'
 import styles from './Home.css'
+import axios from 'axios'
 
 function Home() {
+
+function getData() {
+    fetch('http://localhost:8000/domestic')
+        .then(response => {
+            if (response.ok) {
+                return response.json();
+            }
+        })
+        .then(response => {
+            console.log(response);
+        })
+        .catch((err) => {
+            console.log(err);
+        })
+}
+
+
   return (
         <Container>
             <Jumbotron>
@@ -19,7 +37,7 @@ function Home() {
             <br/>
             <Row md={4} className='button-layout'>
               <Col>
-                <Blockbutton color='outline-danger' icon='Domestic Violence' />
+                <Blockbutton color='outline-danger' icon='Domestic Violence' func={getData} />
               </Col>
               <Col>
                  <Blockbutton color='outline-danger' icon='Homelessness' />
