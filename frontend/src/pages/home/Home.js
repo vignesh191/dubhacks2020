@@ -5,30 +5,14 @@ import styles from './Home.css'
 import axios from 'axios'
 import {  Link } from 'react-router-dom'
 function Home() {
-
-function getData() {
-    fetch('http://localhost:8000/domestic')
-        .then(response => {
-            if (response.ok) {
-                return response.json();
-            }
-        })
-        .then(response => {
-            console.log(response);
-        })
-        .catch((err) => {
-            console.log(err);
-        })
-}
-
-
   return (
         <Container>
             <Jumbotron>
             <h1>List of Services:</h1>
             <h5 className='jumbotron-text'>
               Select your emergency from the list provided below.
-              Easily get information regarding your emergency service.
+              Get information regarding your emergency service <u>fast and easy </u>
+              for <u>your area</u>.
             </h5>
             <br/>
             <hr/>
