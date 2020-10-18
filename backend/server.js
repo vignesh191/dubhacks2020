@@ -21,6 +21,18 @@ app.get('/domestic', async(req, res) => {
                 address: place.formatted_address
             }
         })
+
+        for (let i = 0; i < jsonResponse.results.length; i++) {
+            const placeId = jsonResponse.results[i].place_id;
+            const detailResponse = await fetch(`https://maps.googleapis.com/maps/api/place/details/json?place_id=${placeId}&fields=formatted_phone_number,website&key=AIzaSyBTy4elZc3vmAeYUOKVKbORdUAzNba3pY4`);
+            const jsonDetailResponse = await detailResponse.json();
+
+            if (jsonDetailResponse.result) {
+                results[i].phone = jsonDetailResponse.result.formatted_phone_number;
+                results[i].website = jsonDetailResponse.result.website;
+            }
+        }
+    
     }
 
     res.send(results);
